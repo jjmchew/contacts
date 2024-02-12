@@ -1,6 +1,5 @@
 export class Model {
   #contacts = [];
-  #allTags = [];
 
   constructor() {
     this.getContacts();
@@ -8,10 +7,6 @@ export class Model {
 
   contacts() {
     return this.#contacts;
-  }
-
-  tags() {
-    return this.#allTags;
   }
 
   filter({search, tag}) {
@@ -171,6 +166,23 @@ export class Model {
     });
   }
 
+  #getIdx(id) {
+    return this.#contacts.findIndex(obj => obj.id === id);
+  }
+
+  #dataUpdate(id, data) {
+    let idx = this.#getIdx(id);
+    for (const key in data) {
+      this.#contacts[idx][key] = data[key];
+    }
+  }
+
+  #dataDelete(id) {
+    let idx = this.#getIdx(id);
+    this.#contacts.splice(idx, 1);
+    console.log(this.#contacts);
+  }
+
   // #region Unused here - created for potential feature extension (selecting existing tags when editing/creating contacts)
   // #populateTags() {
   //   if (this.#contacts.length !== 0) {
@@ -190,21 +202,4 @@ export class Model {
   //   });
   // }
   // #endregion
-
-  #getIdx(id) {
-    return this.#contacts.findIndex(obj => obj.id === id);
-  }
-
-  #dataUpdate(id, data) {
-    let idx = this.#getIdx(id);
-    for (const key in data) {
-      this.#contacts[idx][key] = data[key];
-    }
-  }
-
-  #dataDelete(id) {
-    let idx = this.#getIdx(id);
-    this.#contacts.splice(idx, 1);
-    console.log(this.#contacts);
-  }
 }
