@@ -3,8 +3,7 @@ export class Model {
   #allTags = [];
 
   constructor() {
-    this.getContacts()
-    .then(() => this.#populateTags());
+    this.getContacts();
   }
 
   contacts() {
@@ -172,23 +171,25 @@ export class Model {
     });
   }
 
-  #populateTags() {
-    if (this.#contacts.length !== 0) {
-      this.#contacts.forEach(contactObj => {
-        if (contactObj.tags !== '' && contactObj.tags !== null) {
-          this.#processTagString(contactObj.tags);
-        }
-      });
-    }
-  }
-  
-  #processTagString(tagString) {
-    let tags = tagString.split(',');
-    tags.forEach(tag => {
-      if (this.#allTags.includes(tag)) return;
-      this.#allTags.push(tag);
-    });
-  }
+  // #region Unused here - created for potential feature extension (selecting existing tags when editing/creating contacts)
+  // #populateTags() {
+  //   if (this.#contacts.length !== 0) {
+  //     this.#contacts.forEach(contactObj => {
+  //       if (contactObj.tags !== '' && contactObj.tags !== null) {
+  //         this.#processTagString(contactObj.tags);
+  //       }
+  //     });
+  //   }
+  // }
+
+  // #processTagString(tagString) {
+  //   let tags = tagString.split(',');
+  //   tags.forEach(tag => {
+  //     if (this.#allTags.includes(tag)) return;
+  //     this.#allTags.push(tag);
+  //   });
+  // }
+  // #endregion
 
   #getIdx(id) {
     return this.#contacts.findIndex(obj => obj.id === id);
