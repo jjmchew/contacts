@@ -133,6 +133,7 @@ export class Model {
       }
     }
   }
+
   async getContacts() {
     try {
       let data;
