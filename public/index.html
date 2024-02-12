@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contact Manager</title>
+  <!-- <script src="/javascripts/jquery.js"></script> -->
+  <script src="/javascripts/handlebars.js"></script>
+  <script src="/javascripts/app.js" type="module"></script>
+  <link rel="stylesheet" href="/stylesheets/contact.css">
+</head>
+<body>
+  <header>
+    <h1>Contact Manager</h1>
+  </header>
+  <main>
+    <div id="create" class="hide">
+      <h2>Create Contact</h2>
+      <form action="" method="POST">
+        <dl>
+          <dt><label for="name">Full name:</label></dt>
+          <dd><input type="text" name="name" id="createName"></dd>
+        </dl>
+        <dl>
+          <dt><label for="email">Email address:</label></dt>
+          <dd><input type="email" name="email" id="createEmail"></dd>
+        </dl>
+        <dl>
+          <dt><label for="phone">Telephone number:</label></dt>
+          <dd><input type="text" name="phone" id="createPhone"></dd>
+        </dl>
+        <dl>
+          <dt><label>Tags:</label></dt>
+          <dd class="editTags"></dd>
+        </dl>
+        <input class="button" type="submit" value="Submit">
+        <input class="button" type="button" value="Cancel">
+      </form>
+    </div>
+
+    <div id="edit" class="hide">
+      <h2>Edit Contact</h2>
+      <form action="" method="PUT" data-id="">
+        <dl>
+          <dt><label for="name">Full name:</label></dt>
+          <dd><input type="text" name="name" id="editName"></dd>
+        </dl>
+        <dl>
+          <dt><label for="email">Email address:</label></dt>
+          <dd><input type="email" name="email" id="editEmail"></dd>
+        </dl>
+        <dl>
+          <dt><label for="phone">Telephone number:</label></dt>
+          <dd><input type="text" name="phone" id="editPhone"></dd>
+        </dl>
+        <dl>
+          <dt><label>Tags:</label></dt>
+          <dd class="editTags"></dd>
+        </dl>
+        <input class="button" type="submit" value="Submit">
+        <input class="button" type="button" value="Cancel">
+      </form>
+    </div>
+
+    <div id="list" class="">
+      <nav>
+        <div class="button">Add Contact</div>
+        <input type="text" placeholder="Search">
+        <div class="filterTags"></div>
+      </nav>
+      <section id="cards">
+      </section>
+    </div>
+
+  </main>
+  <footer>
+    <p>JS239 assessment practice project</p>
+  </footer>
+
+  <script type="text/x-handlebars" id="cardTemplate">
+    <div class="card" id="card-{{id}}" data-id="{{id}}">
+      <h3>{{full_name}}</h3>
+      <p class="title">Phone Number:</p>
+      <p id="phone-{{id}}">{{phone_number}}</p>
+      <p class="title">Email:</p>
+      <p id="email-{{id}}">{{email}}</p>
+      {{>tagsTemplate this}}
+      <div class="button editBtn">Edit</div>
+      <div class="button deleteBtn">Delete</div>
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="tagsTemplate" data-type="partial">
+    <p class="title">Tags:</p>
+    <div class='tags' id="tags-{{id}}">{{{tagLinks tags}}}</div>
+  </script>
+
+  <script type="text/x-handlebars" id="filterTagsTemplate">
+    <div class='filterTag'>
+      {{tag}}
+      <span class="closeButton"></span>
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="selectTagTemplate">
+    <div class='tag'>
+      {{tag}}
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="editTags">
+    <div class='editTags'>
+      <div class='tags'>{{{filterTags tags}}}</div>
+      <input class='newTag' type='text' placeholder='new tag'>
+      <button class='tag'>Add</button>
+    </div>
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+@import url("css-reset.css");
+html{
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  overflow: auto;
+}
+body {
+  position: relative;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+h2 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+header {
+  padding: 1.5rem;
+  background-color: gray;
+  margin-bottom: 3rem;
+}
+
+main {
+  position: relative;
+}
+
+main,
+#create,
+#edit,
+#list {
+  width: 70vw;
+  margin: auto;
+  padding-bottom: 6rem;
+  transition: all 0.5s ease-in-out;
+  background-color: white;
+}
+
+#create,
+#edit,
+#list {
+  position: absolute;
+}
+
+#create {
+  height: 100vh;
+}
+
+#edit {
+  /* height: 100vh; */
+}
+
+nav {
+  background-color: lightgray;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.filterTags {
+  width: 10ch;
+}
+
+.filterTag {
+  width: 10ch;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  line-height: 1rem;
+  padding: 2px;
+  border: 1px solid lightgray;
+  border-radius: 1ch;
+  vertical-align: 0.4rem;
+  margin: 0.2rem;
+}
+
+.closeButton {
+  display:inline-block;
+  box-sizing:border-box;
+  width:20px;
+  height:20px;
+  background-color:none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='20px'><path stroke='lightgray' stroke-width='2' fill='none' d='M6.25,6.25,17.75,17.75' /><path stroke='lightgray' stroke-width='2' fill='none' d='M6.25,17.75,17.75,6.25' /></svg>");
+  transform: translate(-2px,-2px);
+  cursor: pointer;
+}
+
+#cards {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.message {
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+  margin: 4rem 0;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  margin: auto;
+  padding: 1.5rem;
+  border-top: 1px solid lightgray;
+  color: lightgray;
+  font-size: 0.8rem;
+  background-color: white;
+  z-index: 3;
+}
+
+/* ===== */
+.hide {
+  transform: translateY(50vh);
+  opacity: 0;
+  z-index: -1;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+/* ===== */
+.button {
+  border: 1px solid gray;
+  border-radius: 1ch;
+  background-color: white;
+  padding: 0.5rem 2rem;
+  margin: 2ch;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.button:hover {
+  background-color: gray;
+  color: white;
+}
+
+input[type="text"],
+input[type="email"] {
+  padding: 0.3rem;
+  border: 1px solid lightgray;
+  border-radius: 1ch;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover {
+  border: 1px solid gray;
+}
+
+form input[type="text"],
+form input[type="email"] {
+  width: 100%;
+}
+
+dl {
+  text-align: left;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: baseline;
+
+}
+
+dt,
+dd {
+  display: inline-block;
+}
+
+dt {
+  vertical-align: top;
+  text-align: right;
+  width: 20ch;
+  margin-right: 2ch;
+}
+
+dd {
+  width: 45ch;
+}
+
+.tags {
+  height: auto;
+}
+
+.editTags {
+  min-height: 6rem;
+}
+
+div.editTags input.newTag {
+  width: 30ch;
+}
+/* ===== card */
+.card {
+  padding: 1rem;
+  text-align: left;
+  line-height: 1.5rem;
+  width: 25ch;
+}
+
+.title {
+  font-weight: bold;
+  margin-top: 0.3rem;
+}
+
+.tag {
+  display: inline-block;
+  border: 1px solid lightgray;
+  border-radius: 1ch;
+  background-color: rgb(236, 236, 236);
+  padding: 0.1rem 0.3rem;
+  margin: 0.3rem 0.3rem 0.3rem 0;
+  cursor: pointer;
+}
+
+.tag:hover {
+  background-color: lightgray;
+  color: white;
+}
+
+.notags {
+  padding-top: 0.5rem;
+  color: lightgray;
+  cursor: pointer;
+}
+.notags:after {
+  content: 'No tags';
+}
+
+.button.editBtn,
+.button.deleteBtn {
+  margin: 0.3rem 0 0 0;
+  padding: 0.2ch;
+  width: 9ch;
+  text-align: center;
+}
+
+.button.editBtn::before {
+  content: "✎";
+  color: black;
+}
+
+.button.deleteBtn::before {
+  content: '🗑';
+  color: black;
+}
+

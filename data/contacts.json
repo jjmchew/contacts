@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "full_name": "Naveed Fida",
+    "email": "nf@example.com",
+    "phone_number": "12345678901",
+    "tags": "work,new,friend,real estate,high school,hockey"
+  },
+  {
+    "id": 3,
+    "full_name": "Pete Hanson",
+    "email": "ph@example.com",
+    "phone_number": "54321098761",
+    "tags": null
+  },
+  {
+    "full_name": "jc",
+    "phone_number": "1234567890",
+    "email": "jjmchew@gmail.com",
+    "tags": "friend,high school",
+    "id": 4
+  },
+  {
+    "full_name": "bananas7",
+    "phone_number": "123456789880",
+    "email": "j@j.comk",
+    "tags": "friend",
+    "id": 5
+  },
+  {
+    "full_name": "foo3ddd",
+    "phone_number": "123456789022",
+    "email": "ewald822x@mills.com",
+    "tags": "hockey,work",
+    "id": 7
+  },
+  {
+    "full_name": "Mastery LETS GO",
+    "phone_number": "1234567890",
+    "email": "j@j.comi",
+    "tags": "work",
+    "id": 8
+  },
+  {
+    "full_name": "a",
+    "phone_number": "555-675-3847",
+    "email": "a@b.com",
+    "tags": "friend",
+    "id": 9
+  },
+  {
+    "full_name": "23",
+    "phone_number": "2",
+    "email": "2@2.com",
+    "tags": "new",
+    "id": 10
+  },
+  {
+    "full_name": "mike",
+    "phone_number": "93847",
+    "email": "m@m.com",
+    "tags": "friend",
+    "id": 11
+  },
+  {
+    "full_name": "dude",
+    "phone_number": "923847",
+    "email": "d@d.dom",
+    "tags": "family",
+    "id": 12
+  },
+  {
+    "full_name": "d",
+    "phone_number": "d",
+    "email": "d@d.com",
+    "tags": "new",
+    "id": 13
+  },
+  {
+    "full_name": "a",
+    "phone_number": "a",
+    "email": "a@ke.com",
+    "tags": "a",
+    "id": 14
+  },
+  {
+    "full_name": "b",
+    "phone_number": "b",
+    "email": "b",
+    "tags": "b",
+    "id": 15
+  }
+]
