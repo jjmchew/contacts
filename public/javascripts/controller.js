@@ -69,7 +69,7 @@ export class Controller {
         }
 
         if (e.target.tagName === 'BUTTON') {
-          let tag = document.querySelector('div.editTags input').value;
+          let tag = element.querySelector('div.editTags input').value;
           this.#currentTags.add(tag);
           this.#view.showEditTags(this.#currentTags.tagString());
         }

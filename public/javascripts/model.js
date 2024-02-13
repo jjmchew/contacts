@@ -107,6 +107,7 @@ export class Model {
   }
 
   manageTags(tagString) {
+    console.log(tagString);
     let tags = !!tagString ? tagString.split(',') : [];
 
     return {
@@ -117,6 +118,7 @@ export class Model {
         return tags.join(',');
       },
       add: function(tag) {
+        if (tag === '') return;
         if (!tags.includes(tag)) tags.push(tag);
       },
       remove: function(tag) {

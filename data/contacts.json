@@ -17,7 +17,7 @@
     "full_name": "jc",
     "phone_number": "1234567890",
     "email": "jjmchew@gmail.com",
-    "tags": "friend,high school",
+    "tags": "friend,dd",
     "id": 4
   },
   {
@@ -89,5 +89,12 @@
     "email": "b",
     "tags": "b",
     "id": 15
+  },
+  {
+    "full_name": "me",
+    "phone_number": "293843",
+    "email": "you@you.com",
+    "tags": "new",
+    "id": 16
   }
 ]
